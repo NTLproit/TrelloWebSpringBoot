@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface RoleRepository extends CrudRepository<Role, Integer> {
+public interface RoleRepository extends CrudRepository<Role, Long> {
     @Query(value = "SELECT * FROM role AS r " +
             "INNER JOIN users_role AS ur ON r.id = ur.role_id " +
             "WHERE ur.users_id = :users_id", nativeQuery = true)

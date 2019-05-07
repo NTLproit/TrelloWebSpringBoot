@@ -33,7 +33,7 @@ public class UserServiceImp implements UserService {
         if(user != null && passwordEncoder.matches(password, user.getPassword())){
             String token = service.generateToken(user);
             List<Role> roles = roleRepository.findAllRoleByUserId(user.getId());
-            Signin singin = new Signin(token, user.getUsername(), roles);
+            Signin singin = new Signin(token,user.getId(), user.getUsername(), roles);
             return singin;
         }
         return null;

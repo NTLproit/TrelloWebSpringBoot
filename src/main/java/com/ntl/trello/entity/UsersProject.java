@@ -11,15 +11,16 @@ public class UsersProject {
   @Column(name = "id", nullable = false)
   private long id;
 
-  @Column(name = "users_id", nullable = false)
-  private long usersId;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "users_id", nullable = false)
+  private Users users;
 
-  @Column(name = "project_id", nullable = false)
-  private long projectId;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "project_id", nullable = false)
+  private Project project;
 
   @Column(name = "isManage", nullable = false)
-  private long isManage;
-
+  private boolean isManage;
 
   public long getId() {
     return id;
@@ -29,30 +30,11 @@ public class UsersProject {
     this.id = id;
   }
 
-
-  public long getUsersId() {
-    return usersId;
-  }
-
-  public void setUsersId(long usersId) {
-    this.usersId = usersId;
-  }
-
-
-  public long getProjectId() {
-    return projectId;
-  }
-
-  public void setProjectId(long projectId) {
-    this.projectId = projectId;
-  }
-
-
-  public long getIsManage() {
+  public boolean getIsManage() {
     return isManage;
   }
 
-  public void setIsManage(long isManage) {
+  public void setIsManage(boolean isManage) {
     this.isManage = isManage;
   }
 
