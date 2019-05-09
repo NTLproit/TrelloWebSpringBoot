@@ -22,7 +22,6 @@ public class UsersProject {
   @Column(name = "isManage", nullable = false)
   private boolean isManage;
 
-
   public long getId() {
     return id;
   }
