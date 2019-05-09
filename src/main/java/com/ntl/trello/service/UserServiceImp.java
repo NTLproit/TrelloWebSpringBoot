@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -37,5 +39,12 @@ public class UserServiceImp implements UserService {
             return singin;
         }
         return null;
+    }
+    @Override
+    public Object me(ServletRequest request) {
+        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+        String token = httpServletRequest.getHeader("Authorization").replace("Bearer ", "");
+        Users user = service.getUserByToken(token);
+        return user;
     }
 }

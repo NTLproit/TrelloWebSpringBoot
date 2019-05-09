@@ -7,5 +7,5 @@ import java.util.List;
 
 @Component
 public interface ProjectService {
-    List<Project> getAllProjectByUserId(Long users_id);
+    List<Project> getAllProjectByUserId(int users_id);
 }

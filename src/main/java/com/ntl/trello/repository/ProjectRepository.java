@@ -13,5 +13,5 @@ public interface ProjectRepository extends CrudRepository<Project, Long> {
     @Query(value = "SELECT * FROM project AS p " +
             "INNER JOIN users_project AS up ON p.id = up.project_id " +
             "WHERE up.users_id = :users_id", nativeQuery = true)
-    List<Project> getAllProjectByUserId(@Param("users_id")Long users_id);
+    List<Project> getAllProjectByUserId(@Param("users_id")int users_id);
 }

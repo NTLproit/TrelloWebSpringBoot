@@ -11,7 +11,7 @@ public class Users {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false)
-  private long id;
+  private int id;
 
   @Column(name = "username", nullable = false)
   @NotBlank
@@ -21,11 +21,11 @@ public class Users {
   @NotBlank
   private String password;
 
-  public long getId() {
+  public int getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
 

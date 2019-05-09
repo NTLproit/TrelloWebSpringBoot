@@ -13,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.List;
@@ -45,6 +46,10 @@ public class Controller {
         Signin signin = (Signin) session.getAttribute("signin");
         List<Project> projects = projectService.getAllProjectByUserId(signin.getUsers_id());
         return projects;
+    }
+    @RequestMapping(value = "/me", method = RequestMethod.GET)
+    public ResponseEntity<Object> me(ServletRequest request) {
+        return new ResponseEntity<Object>(service.me(request), HttpStatus.OK);
     }
 }
 

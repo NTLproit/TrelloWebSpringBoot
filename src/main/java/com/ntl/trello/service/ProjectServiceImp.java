@@ -12,7 +12,7 @@ public class ProjectServiceImp implements ProjectService{
     @Autowired
     private ProjectRepository projectRepository;
     @Override
-    public List<Project> getAllProjectByUserId(Long users_id) {
+    public List<Project> getAllProjectByUserId(int users_id) {
         return projectRepository.getAllProjectByUserId(users_id);
     }
 }

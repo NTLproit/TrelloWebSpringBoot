@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Signin {
     private String token;
-    private Long users_id;
+    private int users_id;
     private String username;
     private List<Role> roles;
 
@@ -18,7 +18,7 @@ public class Signin {
         this.roles = roles;
     }
 
-    public Signin(String token, Long users_id, String username, List<Role> roles) {
+    public Signin(String token, int users_id, String username, List<Role> roles) {
         this.token = token;
         this.users_id = users_id;
         this.username = username;
@@ -33,7 +33,7 @@ public class Signin {
         return username;
     }
 
-    public Long getUsers_id() {
+    public int getUsers_id() {
         return users_id;
     }
 }
